@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIContextMenuInteractionDelegate {
         imageView.addInteraction(interaction)
         imageView.isUserInteractionEnabled = true
         
-        imageView.layer.cornerRadius = 15
+        imageView.layer.cornerRadius = 10
     }
     
        func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
@@ -29,20 +29,18 @@ class ViewController: UIViewController, UIContextMenuInteractionDelegate {
      }
     
     func createContextMenu() -> UIMenu {
-        let shareAction = UIAction(title: "Share", image: UIImage(systemName: "")) { _ in
-            print("Hello World")
+        let shareAction = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { _ in
+            print("Share")
         }
         
-        let copy = UIAction(title: "Copy", image: UIImage(systemName: "")) { _ in
-            print("Hello World")
+        let copy = UIAction(title: "Copy", image: UIImage(systemName: "doc.on.doc")) { _ in
+            print("Copy")
         }
-
-        let saveToPhotos = UIAction(title: "Add To Photos", image: UIImage(systemName: "")) { _ in
-            print("Hello World")
+        
+        let saveToPhotos = UIAction(title: "Add To Photos", image: UIImage(systemName: "photo")) { _ in
+            print("Save to Photos")
         }
-
         
         return UIMenu(title: "", children: [shareAction, copy, saveToPhotos])
     }
-        
 }
